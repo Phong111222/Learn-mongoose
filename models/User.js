@@ -25,7 +25,7 @@ UserSchema.static('FindUserByEmail', function (email) {
   return this.findOne({ email });
 });
 
-UserSchema.static('checkPass', async function (pass, hashPass) {
+UserSchema.static('checkPass', function (pass, hashPass) {
   const isMath = bcrypt.compare(pass, hashPass);
   return isMath;
 });
